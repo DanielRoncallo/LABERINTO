@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MazeGenerator : MonoBehaviour {
+
+    public static MazeGenerator instance;
 
     public int mazeWidth;
     public int mazeHeight;
@@ -18,6 +21,15 @@ public class MazeGenerator : MonoBehaviour {
 
     Maze maze;
 
+    public Vector3 mazeGoalPosition;
+
+    public delegate void MazeReadyAction();
+    public static event MazeReadyAction OnMazeReady;
+
+    void Awake() {
+        instance = this;
+    }
+
     void Start() {
         mazeRG = new System.Random(mazeSeed.GetHashCode());
 
@@ -31,7 +43,13 @@ public class MazeGenerator : MonoBehaviour {
         maze = new Maze(mazeWidth, mazeHeight, mazeRG);
         maze.Generate();
 
+        mazeGoalPosition = maze.GetGoalPosition();
+
         DrawMaze();
+
+        if(OnMazeReady != null) {
+            OnMazeReady();
+        }
     }
 
     void DrawMaze() {
@@ -92,11 +110,31 @@ public class MazeGenerator : MonoBehaviour {
     }
 
     public bool GetMazeGridCell(int x, int y) {
-        if(x >= mazeWidth || x < 0 || y >= mazeHeight || y <= 0) {
-            return false;
+        return maze.GetCell(x, y);
+    }
+
+    public List<Vector3> GetRandomFloorPositions(int count) {
+        List<Vector3> positions = new List<Vector3>();
+
+        for(int i = 0; i < count; i++) {
+            Vector3 position = Vector3.one;
+
+            do {
+                int posX = 0;
+                int posY = 0;
+
+                while(!GetMazeGridCell(posX, posY)) {
+                    posX = mazeRG.Next(3, mazeWidth);
+                    posY = mazeRG.Next(3, mazeHeight);
+                }
+
+                position = new Vector3(posX, posY);
+            } while(positions.Contains(position));
+
+            positions.Add(position);
         }
 
-        return maze.Grid[x, y];
+        return positions;
     }
 
     void CreateMazeSprite(Vector3 position, Sprite sprite, Transform parent, int sortingOrder, float rotation) {
