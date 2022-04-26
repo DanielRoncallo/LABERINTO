@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeWidth: 15
   mazeHeight: 9
-  mazeSeed: HappyMaze
+  mazeSeed: 12312321
   floorSprite: {fileID: -8308593206366508291, guid: cba1c0ed4fb7bee4482ef179762ad5c7, type: 3}
   roofSprite: {fileID: 88957257453151522, guid: cba1c0ed4fb7bee4482ef179762ad5c7, type: 3}
   wallSprite: {fileID: 1710117067170674465, guid: cba1c0ed4fb7bee4482ef179762ad5c7, type: 3}
@@ -1037,6 +1037,8 @@ MonoBehaviour:
   keysValueText: {fileID: 751792034}
   mazeGoalPrefab: {fileID: 4579915897593094264, guid: 874db371a7fd7c54bbcf16781519d7af, type: 3}
   mazeKeyPrefab: {fileID: 1031443319168093084, guid: c79de32d23756334b803f6d93bc3d042, type: 3}
+  enemiesToSpawn: 1
+  mazeEnemyPrefab: {fileID: 6023703658625491761, guid: b34626e20c1c2844b83075766af84f62, type: 3}
 --- !u!1 &2052693460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2052693461
 RectTransform:
   m_ObjectHideFlags: 0

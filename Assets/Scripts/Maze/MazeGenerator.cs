@@ -31,6 +31,8 @@ public class MazeGenerator : MonoBehaviour {
     }
 
     void Start() {
+        //aqui asigno el string
+        //mazeSeed = " asddadas";
         mazeRG = new System.Random(mazeSeed.GetHashCode());
 
         if(mazeWidth % 2 == 0)
