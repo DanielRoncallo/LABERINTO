@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class MazeDirectives : MonoBehaviour
 {
+    GameObject pc;
 
     public int keysToFind;
 
@@ -31,6 +32,7 @@ public class MazeDirectives : MonoBehaviour
 
     void Start()
     {
+        pc = GameObject.FindGameObjectWithTag("MainCamera");
         SetKeyValueText();
     }
 
@@ -62,6 +64,8 @@ public class MazeDirectives : MonoBehaviour
         {
             Debug.Log("FINAL NIVEL");
             Debug.Log("Escape the maze");
+            pc.GetComponent<PlayerController>().NextLevel();
+            pc.GetComponent<PlayerController>().SceneLevel();
         }
     }
 
