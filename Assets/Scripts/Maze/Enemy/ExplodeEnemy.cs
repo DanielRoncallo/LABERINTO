@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeEnemy : MonoBehaviour
+public class ExplodeEnemy : MonoBehaviour
 {
+
+    public float fieldofImpact;
+    public float force;
+
+    public LayerMask LayerToHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +18,9 @@ public class MazeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (true)
+        {
+            
+        }
     }
 }
