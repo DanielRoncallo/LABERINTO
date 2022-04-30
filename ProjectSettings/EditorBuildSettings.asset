@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/UIScenes/Inicio.unity
+    guid: 981413d934dac874cbcc787a92dd9094
+  - enabled: 1
+    path: Assets/Scenes/UIScenes/Instrucciones.unity
+    guid: 30754283482173a40975c8bc3e6873d6
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -17,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game4.unity
     guid: 8292577feebdf5747ba608abc14ec4f2
+  - enabled: 1
+    path: Assets/Scenes/UIScenes/GameOver.unity
+    guid: c6fb40edd4909c944b0a5c67362baa9a
+  - enabled: 1
+    path: Assets/Scenes/UIScenes/Win.unity
+    guid: 4139a5cfb87a58447ac166bd624d8f59
   m_configObjects: {}

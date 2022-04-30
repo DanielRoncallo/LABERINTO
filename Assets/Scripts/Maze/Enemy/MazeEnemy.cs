@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MazeEnemy : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class MazeEnemy : MonoBehaviour
         if (DentroExplo == true && EXP.activeSelf)
         {
             Debug.Log("Muerto");
+            SceneManager.LoadScene("GameOver");
         }
     }
     private IEnumerator HandleIt()

@@ -9,14 +9,17 @@ public class PlayerController : MonoBehaviour
     public Text NivelElem;
     static public float TimeCount;
     public Text TimeElem;
-
+   
 
     // Start is called before the first frame update
     void Start()
     {
         //nivel = 1;
+        if (nivel == 0)
+        {
+            TimeCount = 0;
+        }
         NivelElem.text = "Nivel: " + nivel.ToString();
-
 
     }
 
@@ -24,19 +27,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         NivelElem.text = "Nivel: " + nivel.ToString();
-        TimeCount += Time.deltaTime;
+        if (nivel != 5)
+        {
+            TimeCount += Time.deltaTime;
+        }
+
         TimeElem.text = "Tiempo: " + Mathf.Round(TimeCount).ToString();
     }
     public void NextLevel()
     {
+
         nivel += 1;
     }
-    public void inicioJuego()
-    {
-        SceneManager.LoadScene("Inicio");
-    }
+
+
     public void SceneLevel()
     {
+
         if (nivel == 1)
         {
             SceneManager.LoadScene("Game");
@@ -53,6 +60,11 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Game4");
         }
+        if (nivel == 5)
+        {
+            SceneManager.LoadScene("Win");
+        }
+
 
     }
 }

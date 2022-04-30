@@ -1190,9 +1190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ca3f4fca2960f4cbccc12c66fde801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivel: 1
-  NivelElem: {fileID: 0}
-  TimeElem: {fileID: 0}
+  nivel: 3
+  NivelElem: {fileID: 244993157}
+  TimeElem: {fileID: 108536069}
 --- !u!1 &1804396785
 GameObject:
   m_ObjectHideFlags: 0

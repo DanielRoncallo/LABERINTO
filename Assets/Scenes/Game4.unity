@@ -536,9 +536,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ca3f4fca2960f4cbccc12c66fde801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivel: 1
-  NivelElem: {fileID: 0}
-  TimeElem: {fileID: 0}
+  nivel: 4
+  NivelElem: {fileID: 1813417255}
+  TimeElem: {fileID: 165109763}
 --- !u!1 &863548596
 GameObject:
   m_ObjectHideFlags: 0
